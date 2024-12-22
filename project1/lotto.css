@@ -1,0 +1,156 @@
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 타임라인 전체 설정 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
+    background-color: white;
+    height: 100vh;
+    font-family: "sandoll-myeongjoneo1", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-y: hidden;
+}
+
+/* 헤더 영역 설정 */
+.header {
+    display: flex;
+    justify-content: space-between; /* 왼쪽과 오른쪽 요소 정렬 */
+    align-items: center;
+    padding: 0.5vw 2vw;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* 헤더 왼쪽 정렬 */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* 헤더 로고 이미지 */
+.header-logo {
+    width: 1.7vw; /* 이미지 크기 조정 */
+    height: auto;
+    margin-left: 0.5vw;
+}
+
+/* 헤더 텍스트 */
+.header-text {
+    font-size: 2vw;
+    font-weight: 600;
+    color: white;
+}
+
+/* 헤더 오른쪽 정렬 */
+.header-right {
+    font-size: 2vw;
+    font-weight: 600;
+    color: white
+}
+
+/* 타임라인 컨테이너 */
+.timeline-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: max-content;
+    padding-top: 30vh;
+    padding-left: 126vw; /*여기 신경쓰기 !!!!!!!!!!!!*/
+    padding-right: 2vw;
+    gap: 2vw; /* 이벤트 간 간격을 줄임 */
+}
+
+/* 개별 타임라인 이벤트를 감싸는 스크롤 가능한 박스 */
+.timeline-event-wrapper {
+    width: 15vw;
+    height: 70vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* 타임라인 스크롤바 숨기기 */
+.timeline-event-wrapper::-webkit-scrollbar {
+    display: none; /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+}
+
+/* 타임라인 이벤트 */
+.timeline-event {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0vw;
+    padding-left: 1vw; /* 세로선과 텍스트 사이의 여백을 줄임 */
+}
+
+/* 세로선 설정 */
+.timeline-event-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #333;
+    height: 150vh; /* 세로선을 wrapper 높이에 맞춤 */
+    left: 0;
+    top: 0;
+}
+
+
+.event-text:hover {
+    text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
+}
+
+/* 제목*/
+.event-text {
+    font-size: 1.6vw; /* 텍스트 크기 약간 줄임 */
+    font-weight: 800;
+    text-align: left;
+    cursor: pointer; /* 클릭 가능한 커서로 변경 */
+    color: inherit; /* 텍스트 색상 유지 */
+    text-decoration: none; /* 기본 링크 밑줄 제거 */
+    text-underline-offset: 5px;
+}
+
+.title{
+    margin-top: 3vw; /* 이벤트 텍스트와 본문 사이의 간격을 줄임 */
+    font-size: 1vw; /* 본문 텍스트 크기 약간 줄임 */
+    line-height: 1.6vw;
+    text-align: left;
+    word-break: keep-all;
+    font-weight:bold;
+}
+
+/* 본문 텍스트 */
+.main-content {
+    font-size: 1vw; /* 본문 텍스트 크기 약간 줄임 */
+    margin-top: 2vw;
+    line-height: 1.6vw;
+    text-align: left;
+    word-break: keep-all;
+}
+
+/* 이미지 */
+.imgs {
+    width: 100%;
+    margin: 1.8vw 0 0 0; /* 이미지 위아래 여백을 줄임 */
+}
+
+/* 이미지 아래 본문 텍스트 간격 조절 */
+.imgs + .main-content {
+    margin-top: 0.5vw; /* 이미지와 아래 본문 텍스트 간격 줄임 */
+}
+
+.header a {
+    text-decoration: none;
+}
